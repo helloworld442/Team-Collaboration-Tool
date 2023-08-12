@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { TodoListInput } from "../../ui/input/input.component";
 import { TodoItemStyle, TodoListStyle, TodoListTitle, TodoUpdateIcon } from "./todolist.style";
 import TodoFormContainer from "../todoform/todoform.container";
+import Input from "../../ui/input/input.component";
 
 const labelDict = {
   todo: "할 일",
@@ -26,7 +26,7 @@ const TodoItem = () => {
 
   return (
     <TodoItemStyle>
-      <TodoListInput isActive={isActive} />
+      <Input isActive={isActive} />
       <TodoUpdateIcon onClick={onClickUpdateIcon} />
     </TodoItemStyle>
   );

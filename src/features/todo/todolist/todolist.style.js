@@ -21,6 +21,9 @@ export const TodoListStyle = styled.ul`
   border: 2px solid #eee;
   border-radius: 3px;
   background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const TodoListTitle = styled.h4`
