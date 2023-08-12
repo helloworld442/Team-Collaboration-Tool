@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const TodoListInputStyle = styled.input`
+export const TodoInputStyle = styled.input`
   width: 200px;
   height: 30px;
   padding: 6px;
@@ -11,7 +11,7 @@ export const TodoListInputStyle = styled.input`
   font-weight: bold;
 
   &:disabled {
-    background-color: #fff;
+    background-color: transparent;
   }
 
   &:enabled {

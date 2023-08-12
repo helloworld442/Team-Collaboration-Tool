@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TodoListInput } from "../../ui/input/input.component";
 import { TodoItemStyle, TodoListStyle, TodoListTitle, TodoUpdateIcon } from "./todolist.style";
+import TodoFormContainer from "../todoform/todoform.container";
 
 const labelDict = {
   todo: "할 일",
@@ -13,6 +14,7 @@ const TodoList = ({ label, todos }) => {
     <TodoListStyle>
       <TodoListTitle label={label}>{labelDict[label]}</TodoListTitle>
       <TodoItem />
+      <TodoFormContainer label={label} />
     </TodoListStyle>
   );
 };
