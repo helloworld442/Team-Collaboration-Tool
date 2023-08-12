@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const ButtonStyle = styled.button`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: 100%;
+  height: 50px;
   padding: 10px;
   border: none;
   outline: none;

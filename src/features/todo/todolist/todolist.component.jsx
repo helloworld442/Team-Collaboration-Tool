@@ -1,7 +1,12 @@
 import { useState } from "react";
-import { TodoItemStyle, TodoListStyle, TodoListTitle, TodoUpdateIcon } from "./todolist.style";
-import TodoFormContainer from "../todoform/todoform.container";
-import Input from "../../ui/input/input.component";
+import { Button, Input } from "../../ui";
+import {
+  TodoListStyle,
+  TodoItemStyle,
+  TodoListTitle,
+  TodoToggleIcon,
+  TodoUpdateIcon,
+} from "./todolist.style";
 
 const labelDict = {
   todo: "할 일",
@@ -14,7 +19,7 @@ const TodoList = ({ label, todos }) => {
     <TodoListStyle>
       <TodoListTitle label={label}>{labelDict[label]}</TodoListTitle>
       <TodoItem />
-      <TodoFormContainer label={label} />
+      <TodoToggle />
     </TodoListStyle>
   );
 };
@@ -29,6 +34,14 @@ const TodoItem = () => {
       <Input isActive={isActive} />
       <TodoUpdateIcon onClick={onClickUpdateIcon} />
     </TodoItemStyle>
+  );
+};
+
+const TodoToggle = () => {
+  return (
+    <Button>
+      <TodoToggleIcon /> 새로 만들기
+    </Button>
   );
 };
 

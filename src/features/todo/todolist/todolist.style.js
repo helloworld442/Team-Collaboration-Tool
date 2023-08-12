@@ -1,5 +1,5 @@
 import { css, styled } from "styled-components";
-import { FileAddOutlined } from "@ant-design/icons";
+import { FileAddOutlined, PlusOutlined } from "@ant-design/icons";
 
 export const TodoListRow = styled.div`
   position: relative;
@@ -70,4 +70,10 @@ export const TodoUpdateIcon = styled(FileAddOutlined)`
   &:hover {
     color: #333;
   }
+`;
+
+export const TodoToggleIcon = styled(PlusOutlined)`
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
 `;
