@@ -4,9 +4,6 @@ import { styled } from "styled-components";
 export const TodoFormStyle = styled.form`
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;
 
 export const TodoFormIcon = styled(PlusOutlined)`

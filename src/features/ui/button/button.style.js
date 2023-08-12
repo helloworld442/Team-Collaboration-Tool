@@ -6,14 +6,14 @@ export const ButtonStyle = styled.button`
   padding: 10px;
   border: none;
   outline: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   background: transparent;
   font-size: 1rem;
   font-weight: bold;
+  color: #888;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #888;
 
   &:hover {
     border-radius: 3px;
