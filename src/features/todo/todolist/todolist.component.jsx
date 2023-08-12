@@ -24,7 +24,7 @@ const TodoItem = () => {
 
   return (
     <TodoItemStyle>
-      <TodoListInput name="text" isActive={isActive} />
+      <TodoListInput isActive={isActive} />
       <TodoUpdateIcon onClick={onClickUpdateIcon} />
     </TodoItemStyle>
   );

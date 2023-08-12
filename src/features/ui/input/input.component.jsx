@@ -1,7 +1,11 @@
 import { TodoListInputStyle } from "./input.style";
 
-const TodoListInput = ({ name, value, isActive, onChange }) => {
-  return <TodoListInputStyle type="text" name={name} disabled={!isActive} />;
+const TodoListInput = ({ value, isActive, onChange }) => {
+  return <TodoListInputStyle type="text" name="title" disabled={!isActive} />;
 };
 
-export { TodoListInput };
+const TodoFormInput = ({ value, isActive, onChange }) => {
+  return <TodoListInputStyle type="text" name="title" disabled={!isActive} />;
+};
+
+export { TodoListInput, TodoFormInput };

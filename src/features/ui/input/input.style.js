@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const TodoListInputStyle = styled.input`
   width: 200px;
-  height: 24px;
+  height: 30px;
   padding: 6px;
   box-sizing: border-box;
   border: none;
