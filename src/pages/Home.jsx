@@ -1,11 +1,7 @@
 import MainTemplate from "../components/templates/MainTemplate";
 
 const Home = () => {
-  return (
-    <Layout>
-      <MainTemplate />
-    </Layout>
-  );
+  return <MainTemplate />;
 };
 
 export default Home;
