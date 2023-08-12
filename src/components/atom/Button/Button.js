@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ButtonStyle = styled.button`
+export const Button = styled.button`
   width: 100%;
   height: 50px;
   padding: 10px;

@@ -1,10 +1,10 @@
 import Layout from "../layout/Layout";
-import { TodoListContainer } from "../features/todo";
+import MainTemplate from "../components/templates/MainTemplates";
 
 const Home = () => {
   return (
     <Layout>
-      <TodoListContainer />
+      <MainTemplate />
     </Layout>
   );
 };
