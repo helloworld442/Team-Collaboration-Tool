@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TodoListInput } from "../../ui/input/input.component";
 import { TodoItemStyle, TodoListStyle, TodoListTitle, TodoUpdateIcon } from "./todolist.style";
 
@@ -17,10 +18,14 @@ const TodoList = ({ label, todos }) => {
 };
 
 const TodoItem = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const onClickUpdateIcon = () => setIsActive(!isActive);
+
   return (
     <TodoItemStyle>
-      <TodoListInput name="text" />
-      <TodoUpdateIcon />
+      <TodoListInput name="text" isActive={isActive} />
+      <TodoUpdateIcon onClick={onClickUpdateIcon} />
     </TodoItemStyle>
   );
 };
