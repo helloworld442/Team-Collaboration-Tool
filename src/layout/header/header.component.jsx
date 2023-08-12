@@ -4,6 +4,7 @@ import { HomeOutlined, LeftOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const navigateTo = useNavigate();
+  console.log("header 영역");
 
   const goBackButton = () => navigateTo(-1);
 
