@@ -9,6 +9,7 @@ export const TodoInputStyle = styled.input`
   outline: none;
   font-size: 1rem;
   font-weight: bold;
+  background-color: transparent;
 
   &:disabled {
     background-color: transparent;

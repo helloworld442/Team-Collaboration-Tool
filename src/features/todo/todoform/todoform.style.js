@@ -11,13 +11,6 @@ export const TodoFormStyle = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  &:hover {
-    box-sizing: border-box;
-    border: 2px solid #888;
-    border-radius: 3px;
-    background-color: #fff;
-  }
 `;
 
 export const TodoFormIcon = styled(PlusOutlined)`

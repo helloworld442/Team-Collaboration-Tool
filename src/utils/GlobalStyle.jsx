@@ -13,11 +13,6 @@ const GlobalStyle = createGlobalStyle`
         -webkit-text-size-adjust: 100%;
     }
 
-    body {
-        padding: 0;
-        margin: 0;
-        background: #6588f7;
-    }
 
     a {
         text-decoration: none;

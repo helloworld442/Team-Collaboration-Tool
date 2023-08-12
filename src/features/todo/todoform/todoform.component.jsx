@@ -1,11 +1,11 @@
 import { TodoFormInput } from "../../ui/input/input.component";
 import { TodoFormIcon, TodoFormStyle } from "./todoform.style";
 
-const TodoForm = () => {
+const TodoForm = ({ form, onInsert, onSubmit }) => {
   return (
-    <TodoFormStyle>
+    <TodoFormStyle onSubmit={onSubmit}>
       <TodoFormIcon />
-      <TodoFormInput />
+      <TodoFormInput value={form} onChange={onInsert} />
     </TodoFormStyle>
   );
 };
