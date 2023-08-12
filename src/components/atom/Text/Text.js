@@ -26,4 +26,9 @@ export const TodoTitleText = styled.h4`
 
 export const TodoSelectText = styled.span``;
 
-export const TodoUpdateText = styled.span``;
+export const TodoUpdateText = styled.span`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+`;
