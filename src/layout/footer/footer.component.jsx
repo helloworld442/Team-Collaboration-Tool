@@ -11,7 +11,6 @@ import { FooterNav, FooterLink } from "./footer.style";
 const Footer = () => {
   const { pathname } = useLocation();
   const [active, setActive] = useState(0);
-  console.log("asf");
 
   useLayoutEffect(() => {
     switch (pathname) {
