@@ -1,5 +1,5 @@
 import Layout from "../layout/Layout";
-import TodoListContainer from "../features/todo/todolist/todolist.container";
+import { TodoListContainer } from "../features/todo";
 
 const Home = () => {
   return (
