@@ -5,9 +5,9 @@ const MainTemplate = () => {
   return (
     <MainLayout>
       <MainRow>
-        <TodoListOrganism />
-        <TodoListOrganism />
-        <TodoListOrganism />
+        <TodoListOrganism label="todo" />
+        <TodoListOrganism label="work" />
+        <TodoListOrganism label="done" />
       </MainRow>
     </MainLayout>
   );

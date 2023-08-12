@@ -2,10 +2,16 @@ import { styled } from "styled-components";
 import { Text } from "../atom/Text/Text";
 import * as Todo from "../molecules/todo";
 
-const TodoListOrganism = () => {
+const labelDict = {
+  todo: "할 일",
+  work: "진행 중",
+  done: "완료",
+};
+
+const TodoListOrganism = ({ label }) => {
   return (
     <TodoListOrganismStyle>
-      <Text label="todo">할 일</Text>
+      <Text label={label}>{labelDict[label]}</Text>
       <Todo.ItemFiled />
       <Todo.ButtonField />
     </TodoListOrganismStyle>
