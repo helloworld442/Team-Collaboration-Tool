@@ -1,9 +1,11 @@
 import { styled } from "styled-components";
+import { Text } from "../atom/Text/Text";
 import * as Todo from "../molecules/todo";
 
 const TodoListOrganism = () => {
   return (
     <TodoListOrganismStyle>
+      <Text label="todo">할 일</Text>
       <Todo.ItemFiled />
       <Todo.ButtonField />
     </TodoListOrganismStyle>
