@@ -20,8 +20,10 @@ const TodoListOrganism = ({ label, todos }) => {
 const TodoListOrganismStyle = styled.ul`
   width: 300px;
   height: 100%;
-  padding: 0 20px;
+  padding: 20px;
   box-sizing: border-box;
+  border: 2px solid #eee;
+  border-radius: 3px;
   background: #f8f8f8;
 `;
 

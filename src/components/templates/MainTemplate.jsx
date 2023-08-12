@@ -26,7 +26,6 @@ const MainRow = styled.div`
   left: 50%;
   width: 1000px;
   height: 600px;
-  border: 2px solid #333;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;

@@ -30,5 +30,9 @@ export const TodoUpdateText = styled.span`
   position: absolute;
   top: 10px;
   right: 10px;
+  color: #888;
   cursor: pointer;
+  &:hover {
+    color: #333;
+  }
 `;
