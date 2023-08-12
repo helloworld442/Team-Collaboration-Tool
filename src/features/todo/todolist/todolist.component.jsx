@@ -1,10 +1,5 @@
-import {
-  TodoInput,
-  TodoItemStyle,
-  TodoListStyle,
-  TodoListTitle,
-  TodoUpdateIcon,
-} from "./todolist.style";
+import { TodoListInput } from "../../ui/input/input.component";
+import { TodoItemStyle, TodoListStyle, TodoListTitle, TodoUpdateIcon } from "./todolist.style";
 
 const labelDict = {
   todo: "할 일",
@@ -24,7 +19,7 @@ const TodoList = ({ label, todos }) => {
 const TodoItem = () => {
   return (
     <TodoItemStyle>
-      <TodoInput />
+      <TodoListInput name="text" />
       <TodoUpdateIcon />
     </TodoItemStyle>
   );
