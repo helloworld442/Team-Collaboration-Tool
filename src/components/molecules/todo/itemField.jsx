@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Input } from "../../../features/ui";
+import { Input } from "../../atom/Input/Input";
 import { UpdateIcon } from "../../atom/Icon/Icon";
 
 const ItemFiled = () => {

@@ -1,4 +1,4 @@
-import { Button } from "../../../features/ui";
+import { Button } from "../../atom/Button/Button";
 import { PlusIcon } from "../../atom/Icon/Icon";
 
 const ButtonField = () => {
