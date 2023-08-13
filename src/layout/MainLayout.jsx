@@ -2,19 +2,17 @@ import { styled } from "styled-components";
 
 export const MainLayout = styled.div`
   width: 1200px;
-  height: 800px;
+  height: 600px;
   margin: 0 auto;
-  background: #fff;
+  background: ${(props) => props.theme.baseColor};
 `;
 
 export const MainRow = styled.div`
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 1000px;
-  height: 600px;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 20px;
 `;
