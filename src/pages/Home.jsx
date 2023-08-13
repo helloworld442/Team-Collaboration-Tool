@@ -1,5 +1,5 @@
 import { MainLayout, MainRow } from "../layout/MainLayout";
-import { TodoProvider } from "../context/TodoContext";
+import TodoProvider from "../context/TodoContext";
 import TodoTemplate from "../components/todo/TodoTemplate";
 import TodoForm from "../components/todo/TodoForm";
 import TodoHead from "../components/todo/TodoHead";
@@ -12,18 +12,18 @@ const Home = () => {
         <TodoProvider>
           <TodoTemplate>
             <TodoHead label="todo" />
-            <TodoList />
-            <TodoForm />
+            <TodoList label="todo" />
+            <TodoForm label="todo" />
           </TodoTemplate>
           <TodoTemplate>
             <TodoHead label="work" />
-            <TodoList />
-            <TodoForm />
+            <TodoList label="work" />
+            <TodoForm label="work" />
           </TodoTemplate>
           <TodoTemplate>
             <TodoHead label="done" />
-            <TodoList />
-            <TodoForm />
+            <TodoList label="done" />
+            <TodoForm label="done" />
           </TodoTemplate>
         </TodoProvider>
       </MainRow>

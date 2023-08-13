@@ -6,6 +6,7 @@ const TodoItemStyle = styled.li`
   width: 100%;
   height: 80px;
   padding: 10px;
+  margin: 10px 0;
   border: 1.5px solid #eee;
   border-radius: 3px;
   background: #fff;
@@ -42,10 +43,10 @@ const TodoUpdateIcon = styled(FileAddOutlined)`
   }
 `;
 
-const TodoItem = () => {
+const TodoItem = ({ todo }) => {
   return (
     <TodoItemStyle>
-      <TodoItemInput />
+      <TodoItemInput value={todo.title} disabled={todo.isActive} />
       <TodoUpdateIcon />
     </TodoItemStyle>
   );

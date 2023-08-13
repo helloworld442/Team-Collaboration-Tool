@@ -1,5 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
+import { useState } from "react";
 import { styled } from "styled-components";
+import { useTodoDispatch, useTodoState } from "../../context/TodoContext";
 
 const TodoFormStyle = styled.form`
   width: 100%;
@@ -41,13 +43,38 @@ const TodoFormInput = styled.input`
   background: transparent;
 `;
 
-const TodoForm = () => {
+const TodoForm = ({ label }) => {
+  const [value, setValue] = useState("");
+  const { todos } = useTodoState();
+  const dispatch = useTodoDispatch();
+
+  const onChangeInput = (e) => setValue(e.target.value);
+
+  const onSubmitInput = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "CREATE",
+      todo: {
+        id: todos.length + 1,
+        title: value,
+        isActive: true,
+        isStatus: label,
+      },
+    });
+    setValue("");
+  };
+
   return (
-    <TodoFormStyle>
+    <TodoFormStyle onSubmit={onSubmitInput}>
       <TodoFormButton>
         <TodoFormButtonIcon />
       </TodoFormButton>
-      <TodoFormInput placeholder="제목을 입력하세요" />
+      <TodoFormInput
+        type="text"
+        value={value}
+        onChange={onChangeInput}
+        placeholder="제목을 입력하세요"
+      />
     </TodoFormStyle>
   );
 };
