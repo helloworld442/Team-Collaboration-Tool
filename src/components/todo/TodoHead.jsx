@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 
-export const Text = styled.h4`
+export const TodoHeadText = styled.h4`
   font-size: 1.2rem;
   font-weight: bold;
 
@@ -22,3 +22,9 @@ export const Text = styled.h4`
       color: green;
     `}
 `;
+
+const TodoHead = ({ label }) => {
+  return <TodoHeadText label={label}>{label}</TodoHeadText>;
+};
+
+export default TodoHead;
