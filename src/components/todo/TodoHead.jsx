@@ -1,30 +1,37 @@
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 
-export const TodoHeadText = styled.h4`
-  font-size: 1.2rem;
-  font-weight: bold;
+const TodoHeadStyle = styled.div`
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  .head-title {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+  }
 
-  ${(props) =>
-    props.label === "todo" &&
-    css`
-      color: #888;
-    `}
-
-  ${(props) =>
-    props.label === "work" &&
-    css`
-      color: ${(props) => props.theme.baseColor};
-    `}
-
-  ${(props) =>
-    props.label === "done" &&
-    css`
-      color: green;
-    `}
+  .head-todo-num {
+    display: inline-block;
+    padding: 2px 6px 0 6px;
+    font-size: 0.925rem;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 20px;
+    color: #888;
+    background: #2e3138;
+  }
 `;
 
-const TodoHead = ({ label }) => {
-  return <TodoHeadText label={label}>{label}</TodoHeadText>;
+const TodoHead = () => {
+  return (
+    <TodoHeadStyle>
+      <span className="head-title">📋 Backlog</span>
+      <span className="head-todo-num">2</span>
+    </TodoHeadStyle>
+  );
 };
 
-export default TodoHead;
+const Head = TodoHead;
+
+export { Head };

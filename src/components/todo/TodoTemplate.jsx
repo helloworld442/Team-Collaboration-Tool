@@ -1,20 +1,19 @@
 import { styled } from "styled-components";
 
 const TodoTemplateStyle = styled.div`
-  width: 300px;
-  height: 600px;
-  padding: 20px;
+  width: 350px;
+  height: 100%;
+  padding: 14px;
   box-sizing: border-box;
-  border: 2px solid #eee;
-  border-radius: 3px;
-  background: #f8f8f8;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border: 1px solid rgb(33, 38, 45);
+  border-radius: 6px;
+  background: ${(props) => props.theme.cardColor};
 `;
 
 const TodoTemplate = ({ children }) => {
   return <TodoTemplateStyle>{children}</TodoTemplateStyle>;
 };
 
-export default TodoTemplate;
+const Template = TodoTemplate;
+
+export { Template };
