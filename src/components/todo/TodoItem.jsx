@@ -1,5 +1,6 @@
 import { FileAddOutlined } from "@ant-design/icons";
 import { styled } from "styled-components";
+import { useTodoDispatch } from "../../context/TodoContext";
 
 const TodoItemStyle = styled.li`
   position: relative;
@@ -44,10 +45,20 @@ const TodoUpdateIcon = styled(FileAddOutlined)`
 `;
 
 const TodoItem = ({ todo }) => {
+  const dispatch = useTodoDispatch();
+
+  const onToggleIcon = () => {
+    dispatch({ type: "TOGGLE_TODO_FIELD", id: todo.id });
+  };
+
+  const onChangeInput = (e) => {
+    dispatch({ type: "CHANGE_TODO_FIELD", id: todo.id, title: e.target.value });
+  };
+
   return (
     <TodoItemStyle>
-      <TodoItemInput value={todo.title} disabled={todo.isActive} />
-      <TodoUpdateIcon />
+      <TodoItemInput value={todo.title} disabled={todo.isActive} onChange={onChangeInput} />
+      <TodoUpdateIcon onClick={onToggleIcon} />
     </TodoItemStyle>
   );
 };

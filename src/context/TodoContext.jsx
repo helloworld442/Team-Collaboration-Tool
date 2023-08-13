@@ -10,8 +10,20 @@ function todoReducer(state = initialState, action) {
   switch (action.type) {
     case "CREATE":
       return { ...state, todos: state.todos.concat(action.todo) };
-    case "UPDATE":
-      return;
+    case "TOGGLE_TODO_FIELD":
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, isActive: !todo.isActive } : todo
+        ),
+      };
+    case "CHANGE_TODO_FIELD":
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, title: action.title } : todo
+        ),
+      };
     default:
       return state;
   }
