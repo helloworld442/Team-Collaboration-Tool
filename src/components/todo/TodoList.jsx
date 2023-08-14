@@ -1,8 +1,7 @@
 import { styled } from "styled-components";
 import TodoItem from "./TodoItem";
 import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
-import { useRecoilState } from "recoil";
-import { draggedState } from "../../recoil/draggedItem";
+import { useEffect, useState } from "react";
 
 const TodoListStyle = styled.ul`
   width: 100%;
@@ -11,21 +10,21 @@ const TodoListStyle = styled.ul`
 `;
 
 const TodoList = ({ label }) => {
-  let { todos } = useTodoState();
+  const { todos } = useTodoState();
   const dispatch = useTodoDispatch();
-  const [draggedItem, setDraggedItem] = useRecoilState(draggedState);
+  const [draggedItem, setDraggedItem] = useState(null);
 
   const onDragStart = (e, todo) => {
     setDraggedItem(todo);
     e.dataTransfer.effectAllowed = "move";
   };
 
-  const onDragOver = (e, index) => {
+  const onDragOver = (e, todo) => {
     e.preventDefault();
     e.currentTarget.style.backgroundColor = "lightgray";
   };
 
-  const onDragLeave = (e, index) => {
+  const onDragLeave = (e, todo) => {
     e.preventDefault();
     e.currentTarget.style.backgroundColor = "#eee";
   };

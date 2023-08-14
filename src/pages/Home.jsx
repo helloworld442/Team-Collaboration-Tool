@@ -7,14 +7,14 @@ const Home = () => {
     <MainLayout>
       <TodoContainer>
         <Todo.Template>
-          <Todo.Head />
+          <Todo.Head label="todo" />
           <Todo.List label="todo" />
           <Todo.Form label="todo" />
         </Todo.Template>
       </TodoContainer>
       <TodoContainer>
         <Todo.Template>
-          <Todo.Head />
+          <Todo.Head label="work" />
           <Todo.List label="work" />
           <Todo.Form label="work" />
         </Todo.Template>
