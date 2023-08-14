@@ -41,8 +41,6 @@ const TodoItemStyle = styled.li`
 const TodoItem = ({ todo }) => {
   const [isHover, setIsHover] = useState(false);
 
-  console.log("hello world!");
-
   const onMouseEnter = () => setIsHover(true);
 
   const onMouseLeave = () => setIsHover(false);
