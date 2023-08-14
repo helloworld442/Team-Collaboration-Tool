@@ -21,7 +21,12 @@ const TodoList = () => {
 
   const onDragOver = (e, index) => {
     e.preventDefault();
-    //   e.currentTarget.style.backgroundColor = 'lightgray';
+    e.currentTarget.style.backgroundColor = "lightgray";
+  };
+
+  const onDragLeave = (e, index) => {
+    e.preventDefault();
+    e.currentTarget.style.backgroundColor = "#eee";
   };
 
   const onDrop = (e, index) => {
@@ -37,6 +42,9 @@ const TodoList = () => {
 
     //바꾼 todos를 업데이트 하는 로직
     dispatch({ type: "UPDATE_TODO_BY_DRAG", payload: updateTodos });
+
+    //드래그 앤 드랍 후 원해 색깔로 초기화 하기
+    e.currentTarget.style.backgroundColor = "#eee";
   };
 
   return (
@@ -47,6 +55,7 @@ const TodoList = () => {
           todo={todo}
           onDragStart={(e) => onDragStart(e, index)}
           onDragOver={(e) => onDragOver(e, index)}
+          onDragLeave={(e) => onDragLeave(e, index)}
           onDrop={(e) => onDrop(e, index)}
         />
       ))}

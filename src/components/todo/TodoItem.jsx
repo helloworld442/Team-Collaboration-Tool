@@ -52,7 +52,7 @@ const TodoItemStyle = styled.li`
   }
 `;
 
-const TodoItem = ({ todo, onDragStart, onDragOver, onDrop }) => {
+const TodoItem = ({ todo, onDragStart, onDragOver, onDragLeave, onDrop }) => {
   const [isHover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -67,6 +67,7 @@ const TodoItem = ({ todo, onDragStart, onDragOver, onDrop }) => {
       draggable="true"
       onDragStart={onDragStart}
       onDragOver={onDragOver}
+      onDragLeave={onDragLeave}
       onDrop={onDrop}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
