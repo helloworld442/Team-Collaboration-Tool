@@ -1,4 +1,5 @@
 import { PlusOutlined } from "@ant-design/icons";
+import { useState } from "react";
 import { styled } from "styled-components";
 
 const TodoFormStyle = styled.form`
@@ -36,12 +37,13 @@ const TodoFormStyle = styled.form`
 `;
 
 const TodoForm = () => {
+  const [value, setValue] = useState("");
   return (
     <TodoFormStyle>
-      <button>
+      <button type="submit">
         <PlusOutlined />
       </button>
-      <input type="text" placeholder="Add item" />
+      <input type="text" value={value} placeholder="Add item" />
     </TodoFormStyle>
   );
 };
