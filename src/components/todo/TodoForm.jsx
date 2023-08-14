@@ -49,9 +49,13 @@ const TodoForm = () => {
   const onSubmitInput = (e) => {
     e.preventDefault();
 
+    // todo form으로 보낼 데이터 양식
     const payload = { id: todos.length + 1, value, isDone: false };
 
+    // todo form으로 데이터를 보내는 코드
     dispatch({ type: "CREATE_TODO", payload });
+
+    // todo form의 value값을 초기화하는 코드
     setValue("");
   };
 
