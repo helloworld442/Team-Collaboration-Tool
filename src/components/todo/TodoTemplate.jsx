@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const TodoTemplateStyle = styled.div`
   width: 350px;
-  height: 100%;
+  height: 600px;
   padding: 14px;
   box-sizing: border-box;
   border: 1px solid rgb(33, 38, 45);

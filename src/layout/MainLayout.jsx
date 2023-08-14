@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const MainLayout = styled.div`
-  width: 1200px;
-  height: 600px;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
   background: ${(props) => props.theme.baseColor};
 `;
