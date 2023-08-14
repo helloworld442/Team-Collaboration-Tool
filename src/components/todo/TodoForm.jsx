@@ -5,11 +5,11 @@ import { PlusOutlined } from "@ant-design/icons";
 
 const TodoFormStyle = styled.form`
   position: absolute;
-  bottom: 14px;
-  left: 14px;
-  width: 318px;
-  height: 35px;
-  padding: 24px 6px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 14px;
   border-radius: 6px;
   box-sizing: border-box;
   display: flex;
@@ -17,7 +17,7 @@ const TodoFormStyle = styled.form`
   gap: 14px;
 
   &:hover {
-    background: #eee;
+    background: #ddd;
   }
 
   button {
