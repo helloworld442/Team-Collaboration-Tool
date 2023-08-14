@@ -5,9 +5,7 @@ import { useTodoState } from "../../container/TodoContainer";
 const TodoListStyle = styled.ul`
   width: 100%;
   height: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  overflow-y: scroll;
 `;
 
 const TodoList = () => {

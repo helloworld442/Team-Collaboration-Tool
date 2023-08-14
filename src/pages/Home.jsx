@@ -12,6 +12,13 @@ const Home = () => {
           <Todo.Form />
         </Todo.Template>
       </TodoContainer>
+      <TodoContainer>
+        <Todo.Template>
+          <Todo.Head />
+          <Todo.List />
+          <Todo.Form />
+        </Todo.Template>
+      </TodoContainer>
     </MainLayout>
   );
 };

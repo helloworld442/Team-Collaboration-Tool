@@ -8,6 +8,7 @@ const TodoItemStyle = styled.li`
   width: 100%;
   height: 84px;
   padding: 14px;
+  margin: 14px 0;
   box-sizing: border-box;
   border: 2px solid #888;
   border-radius: 6px;
