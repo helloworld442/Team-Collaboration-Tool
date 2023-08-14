@@ -14,6 +14,8 @@ const TodoList = () => {
   const dispatch = useTodoDispatch();
   const [draggedItem, setDraggedItem] = useState(null);
 
+  console.log("hell0 wor1d!");
+
   const onDragStart = (e, index) => {
     setDraggedItem(todos[index]);
     e.dataTransfer.effectAllowed = "move";
