@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { useTodoState } from "../../container/TodoContainer";
 
 const TodoHeadStyle = styled.div`
   margin-bottom: 14px;
@@ -22,10 +23,12 @@ const TodoHeadStyle = styled.div`
 `;
 
 const TodoHead = () => {
+  const { todos } = useTodoState();
+
   return (
     <TodoHeadStyle>
       <span className="head-title">📋 Backlog</span>
-      <span className="head-todo-num">2</span>
+      <span className="head-todo-num">{todos.length}</span>
     </TodoHeadStyle>
   );
 };
