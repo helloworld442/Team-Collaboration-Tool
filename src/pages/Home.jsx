@@ -11,8 +11,6 @@ const Home = () => {
           <Todo.List label="todo" />
           <Todo.Form label="todo" />
         </Todo.Template>
-      </TodoContainer>
-      <TodoContainer>
         <Todo.Template>
           <Todo.Head label="work" />
           <Todo.List label="work" />

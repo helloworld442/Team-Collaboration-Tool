@@ -22,13 +22,14 @@ const TodoHeadStyle = styled.div`
   }
 `;
 
-const TodoHead = () => {
+const TodoHead = ({ label }) => {
   const { todos } = useTodoState();
+  const labelTodos = todos.filter((todo) => todo.label === label);
 
   return (
     <TodoHeadStyle>
       <span className="head-title">📋 Backlog</span>
-      <span className="head-todo-num">{todos.length}</span>
+      <span className="head-todo-num">{labelTodos.length}</span>
     </TodoHeadStyle>
   );
 };

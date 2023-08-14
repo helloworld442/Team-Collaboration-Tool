@@ -1,21 +1,26 @@
 import { styled } from "styled-components";
 import TodoItem from "./TodoItem";
 import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
-import { useEffect, useState } from "react";
 
 const TodoListStyle = styled.ul`
   width: 100%;
   height: 500px;
   overflow-y: scroll;
+
+  .bottom-box {
+    width: 100%;
+    height: 80px;
+  }
 `;
 
 const TodoList = ({ label }) => {
-  const { todos } = useTodoState();
+  const { todos, draggedTodo } = useTodoState();
   const dispatch = useTodoDispatch();
-  const [draggedItem, setDraggedItem] = useState(null);
+  const labelTodos = todos.filter((todo) => todo.label === label);
+  const dummyTodo = { id: labelTodos.length - 1, value: "", label };
 
   const onDragStart = (e, todo) => {
-    setDraggedItem(todo);
+    dispatch({ type: "UPDATE_TODO_BY_DRAG", payload: todo.id });
     e.dataTransfer.effectAllowed = "move";
   };
 
@@ -26,33 +31,33 @@ const TodoList = ({ label }) => {
 
   const onDragLeave = (e, todo) => {
     e.preventDefault();
-    e.currentTarget.style.backgroundColor = "#eee";
+    e.currentTarget.style.backgroundColor = "#f8f8f8";
   };
 
-  const onDrop = (e, targetTodo) => {
+  const onDrop = async (e, targetTodo) => {
     e.preventDefault();
 
     const updateTodos = [...todos];
 
-    // 동일한 하나의 TodoList에서 Drag and Drop을 구현했을 경우
-    const draggedIndex = updateTodos.findIndex((todo) => todo.id === draggedItem.id);
+    if (draggedTodo.label !== targetTodo.label) {
+      draggedTodo.label = targetTodo.label;
+    }
+    const draggedIndex = updateTodos.findIndex((todo) => todo.id === draggedTodo.id);
     const targetIndex = updateTodos.findIndex((todo) => todo.id === targetTodo.id);
 
     updateTodos.splice(draggedIndex, 1);
-    updateTodos.splice(targetIndex, 0, draggedItem);
+    updateTodos.splice(targetIndex, 0, draggedTodo);
 
     //바꾼 todos를 업데이트 하는 로직
     dispatch({ type: "UPDATE_TODO_BY_DROP", payload: updateTodos });
 
-    setDraggedItem(null);
-
-    //드래그 앤 드랍 후 원해 색깔로 초기화 하기
-    e.currentTarget.style.backgroundColor = "#eee";
+    // 드래그 앤 드랍 후 원해 색깔로 초기화 하기
+    e.currentTarget.style.backgroundColor = "#f8f8f8";
   };
 
   return (
     <TodoListStyle>
-      {todos.map((todo) => (
+      {labelTodos.map((todo) => (
         <TodoItem
           key={todo.id}
           todo={todo}
@@ -62,6 +67,12 @@ const TodoList = ({ label }) => {
           onDrop={(e) => onDrop(e, todo)}
         />
       ))}
+      <div
+        className="bottom-box"
+        onDragOver={(e) => onDragOver(e)}
+        onDragLeave={(e) => onDragLeave(e)}
+        onDrop={(e) => onDrop(e, dummyTodo)}
+      ></div>
     </TodoListStyle>
   );
 };
