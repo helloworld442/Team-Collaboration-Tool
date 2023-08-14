@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
 import { styled } from "styled-components";
-import { PlusOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const TodoFormStyle = styled.form`
   position: absolute;
@@ -26,6 +27,7 @@ const TodoFormStyle = styled.form`
     outline: none;
     font-size: 1.2rem;
     background: transparent;
+    color: #888;
   }
 
   input {
@@ -56,7 +58,7 @@ const TodoForm = () => {
   return (
     <TodoFormStyle onSubmit={onSubmitInput}>
       <button type="submit">
-        <PlusOutlined />
+        <FontAwesomeIcon icon={faPlus} />
       </button>
       <input type="text" value={value} onChange={onChangeInput} placeholder="Add item" />
     </TodoFormStyle>
