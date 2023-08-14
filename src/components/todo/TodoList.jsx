@@ -10,6 +10,7 @@ const TodoListStyle = styled.ul`
   .bottom-box {
     width: 100%;
     height: 80px;
+    margin-top: 14px;
   }
 `;
 
@@ -42,6 +43,7 @@ const TodoList = ({ label }) => {
     if (draggedTodo.label !== targetTodo.label) {
       draggedTodo.label = targetTodo.label;
     }
+
     const draggedIndex = updateTodos.findIndex((todo) => todo.id === draggedTodo.id);
     const targetIndex = updateTodos.findIndex((todo) => todo.id === targetTodo.id);
 

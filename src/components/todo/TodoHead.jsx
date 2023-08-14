@@ -28,7 +28,7 @@ const TodoHead = ({ label }) => {
 
   return (
     <TodoHeadStyle>
-      <span className="head-title">📋 Backlog</span>
+      <span className="head-title">{label}</span>
       <span className="head-todo-num">{labelTodos.length}</span>
     </TodoHeadStyle>
   );

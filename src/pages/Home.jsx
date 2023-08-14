@@ -16,6 +16,11 @@ const Home = () => {
           <Todo.List label="work" />
           <Todo.Form label="work" />
         </Todo.Template>
+        <Todo.Template>
+          <Todo.Head label="done" />
+          <Todo.List label="done" />
+          <Todo.Form label="done" />
+        </Todo.Template>
       </TodoContainer>
     </MainLayout>
   );
