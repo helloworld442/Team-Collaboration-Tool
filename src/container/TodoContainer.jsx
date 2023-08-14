@@ -19,7 +19,6 @@ const todoReducer = (state = initialState, action) => {
 };
 
 const TodoContainer = ({ children }) => {
-  console.log("HEELO WOLRD");
   const [state, dispatch] = useReducer(todoReducer);
 
   return <TodoContext.Provider value={{ state, dispatch }}>{children}</TodoContext.Provider>;
