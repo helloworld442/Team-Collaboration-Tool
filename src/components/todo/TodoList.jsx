@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import TodoItem from "./TodoItem";
+
 import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
 
 const TodoListStyle = styled.ul`
@@ -11,6 +12,7 @@ const TodoListStyle = styled.ul`
     width: 100%;
     height: 80px;
     margin-top: 14px;
+    border-radius: 6px;
   }
 `;
 
