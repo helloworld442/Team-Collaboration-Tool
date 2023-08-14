@@ -37,7 +37,7 @@ const TodoList = ({ label }) => {
     e.currentTarget.style.backgroundColor = "#f8f8f8";
   };
 
-  const onDrop = async (e, targetTodo) => {
+  const onDrop = (e, targetTodo) => {
     e.preventDefault();
 
     const updateTodos = [...todos];
