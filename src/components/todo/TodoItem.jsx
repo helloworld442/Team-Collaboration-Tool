@@ -52,7 +52,7 @@ const TodoItemStyle = styled.li`
   }
 `;
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, onDragStart, onDragOver, onDrop }) => {
   const [isHover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -63,7 +63,14 @@ const TodoItem = ({ todo }) => {
   const onOpenModal = () => setIsOpen(!isOpen);
 
   return (
-    <TodoItemStyle onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <TodoItemStyle
+      draggable="true"
+      onDragStart={onDragStart}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {/* 아이템의 타이틀 */}
       <h4 className="item-title">{todo.value}</h4>
 
