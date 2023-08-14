@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { faEllipsis, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { styled } from "styled-components";
-import Tag from "../ui/tag/Tag";
-import { useState } from "react";
+import * as Modal from "../ui/modal/Modal";
 
 const TodoItemStyle = styled.li`
   position: relative;
@@ -33,29 +33,50 @@ const TodoItemStyle = styled.li`
     display: none;
   }
 
+  .item-tag-trigger {
+    position: absolute;
+    bottom: 14px;
+    display: none;
+  }
+
+  .item-tag-modal {
+    display: none;
+  }
+
   .hovered {
+    display: inline-block;
+  }
+
+  .opened {
     display: inline-block;
   }
 `;
 
 const TodoItem = ({ todo }) => {
   const [isHover, setIsHover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onMouseEnter = () => setIsHover(true);
 
   const onMouseLeave = () => setIsHover(false);
 
+  const onOpenModal = () => setIsOpen(!isOpen);
+
   return (
     <TodoItemStyle onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {/* 아이템의 타이틀 */}
       <h4 className="item-title">{todo.value}</h4>
-      <span className={`item-tags ${isHover ? "hovered" : ""}`}>
-        <span>
-          <FontAwesomeIcon icon={faPlus} />
-        </span>
+
+      {/* 아이템의 테그들 */}
+      <span className="item-tags"></span>
+
+      {/* 아이템 테그들을 추가하는 플러스 버튼 */}
+      <span className={`item-tag-trigger ${isHover ? "hovered" : ""}`} onClick={onOpenModal}>
+        <FontAwesomeIcon icon={faPlus} />
       </span>
-      <span className={`item-setting ${isHover ? "hovered" : ""}`}>
-        <FontAwesomeIcon icon={faEllipsis} />
-      </span>
+
+      {/* 아이템 테그들을 추가하는 모달창 */}
+      <span className={`item-tag-modal ${isOpen ? "opened" : ""}`}>hell0 wor1d!</span>
     </TodoItemStyle>
   );
 };
