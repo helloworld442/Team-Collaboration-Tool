@@ -8,6 +8,13 @@ const TagStyle = styled.span`
   border-radius: 15px;
 
   ${(props) =>
+    props.tag === "small" &&
+    css`
+      color: rgb(65, 105, 225);
+      background: rgb(65, 105, 225, 0.3);
+    `}
+
+  ${(props) =>
     props.tag === "medium" &&
     css`
       color: rgb(255, 165, 0);
@@ -22,8 +29,12 @@ const TagStyle = styled.span`
     `}
 `;
 
-const Tag = ({ tag }) => {
-  return <TagStyle tag={tag}>{tag}</TagStyle>;
+const Tag = ({ tag, onClick }) => {
+  return (
+    <TagStyle tag={tag} onClick={onClick}>
+      {tag}
+    </TagStyle>
+  );
 };
 
 export default Tag;

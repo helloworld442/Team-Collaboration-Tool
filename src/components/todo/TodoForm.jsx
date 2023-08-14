@@ -50,7 +50,7 @@ const TodoForm = ({ label }) => {
     e.preventDefault();
 
     // todo form으로 보낼 데이터 양식
-    const payload = { id: todos.length + 1, value, isDone: false, label };
+    const payload = { id: todos.length + 1, value, label, tags: [] };
 
     // todo form으로 데이터를 보내는 코드
     dispatch({ type: "CREATE_TODO", payload });
