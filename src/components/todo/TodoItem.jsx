@@ -2,7 +2,6 @@ import { useState } from "react";
 import { faEllipsis, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { styled } from "styled-components";
-import * as Modal from "../ui/modal/Modal";
 
 const TodoItemStyle = styled.li`
   position: relative;
