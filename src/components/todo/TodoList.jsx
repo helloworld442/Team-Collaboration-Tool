@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 const TodoListStyle = styled.ul`
   width: 100%;
-  height: 100%;
+  height: 500px;
 `;
 
 const TodoList = () => {

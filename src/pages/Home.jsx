@@ -1,16 +1,17 @@
-import { MainLayout, MainRow } from "../layout/MainLayout";
+import { MainLayout } from "../layout/MainLayout";
 import * as Todo from "../components/todo";
+import TodoContainer from "../container/TodoContainer";
 
 const Home = () => {
   return (
     <MainLayout>
-      <MainRow>
+      <TodoContainer>
         <Todo.Template>
           <Todo.Head />
           <Todo.List />
           <Todo.Form />
         </Todo.Template>
-      </MainRow>
+      </TodoContainer>
     </MainLayout>
   );
 };

@@ -1,7 +1,7 @@
 const theme = {
-  baseColor: "rgb(14,17,23)",
-  cardColor: "rgb(2,4,9)",
-  itemColor: "rgb(23,27,33)",
+  baseColor: "#fff",
+  cardColor: "#f8f8f8",
+  itemColor: "#eee",
 };
 
 export default theme;

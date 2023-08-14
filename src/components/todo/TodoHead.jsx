@@ -3,23 +3,21 @@ import { styled } from "styled-components";
 const TodoHeadStyle = styled.div`
   margin-bottom: 14px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   .head-title {
     margin-right: 8px;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #fff;
+    color: #333;
   }
 
   .head-todo-num {
     display: inline-block;
-    padding: 2px 6px 0 6px;
-    font-size: 0.925rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1;
     border-radius: 20px;
     color: #888;
-    background: #2e3138;
   }
 `;
 
