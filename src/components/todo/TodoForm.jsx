@@ -1,6 +1,7 @@
-import { PlusOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
 import { styled } from "styled-components";
+import { PlusOutlined } from "@ant-design/icons";
 
 const TodoFormStyle = styled.form`
   position: absolute;
@@ -38,12 +39,23 @@ const TodoFormStyle = styled.form`
 
 const TodoForm = () => {
   const [value, setValue] = useState("");
+  const { todos } = useTodoState();
+  const dispatch = useTodoDispatch();
+
+  const onChangeInput = (e) => setValue(e.target.value);
+
+  const onSubmitInput = (e) => {
+    e.preventDefault();
+    const payload = { id: todos.length + 1, value, isDone: false };
+    dispatch({ type: "CREATE_TODO", payload });
+  };
+
   return (
-    <TodoFormStyle>
+    <TodoFormStyle onSubmit={onSubmitInput}>
       <button type="submit">
         <PlusOutlined />
       </button>
-      <input type="text" value={value} placeholder="Add item" />
+      <input type="text" value={value} onChange={onChangeInput} placeholder="Add item" />
     </TodoFormStyle>
   );
 };
