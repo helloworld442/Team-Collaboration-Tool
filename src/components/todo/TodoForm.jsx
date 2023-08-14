@@ -46,8 +46,11 @@ const TodoForm = () => {
 
   const onSubmitInput = (e) => {
     e.preventDefault();
+
     const payload = { id: todos.length + 1, value, isDone: false };
+
     dispatch({ type: "CREATE_TODO", payload });
+    setValue("");
   };
 
   return (
