@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const MainLayout = styled.div`
-  width: 100%;
-  height: 100vh;
+  width: 1200px;
+  height: 800px;
   padding: 20px;
   margin: 0 auto;
   box-sizing: border-box;
