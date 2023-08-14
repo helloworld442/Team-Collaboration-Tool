@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import TodoItem from "./TodoItem";
 import { useTodoDispatch, useTodoState } from "../../container/TodoContainer";
-import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { draggedState } from "../../recoil/draggedItem";
 
 const TodoListStyle = styled.ul`
   width: 100%;
@@ -9,13 +10,13 @@ const TodoListStyle = styled.ul`
   overflow-y: scroll;
 `;
 
-const TodoList = () => {
-  const { todos } = useTodoState();
+const TodoList = ({ label }) => {
+  let { todos } = useTodoState();
   const dispatch = useTodoDispatch();
-  const [draggedItem, setDraggedItem] = useState(null);
+  const [draggedItem, setDraggedItem] = useRecoilState(draggedState);
 
-  const onDragStart = (e, index) => {
-    setDraggedItem(todos[index]);
+  const onDragStart = (e, todo) => {
+    setDraggedItem(todo);
     e.dataTransfer.effectAllowed = "move";
   };
 
@@ -29,19 +30,22 @@ const TodoList = () => {
     e.currentTarget.style.backgroundColor = "#eee";
   };
 
-  const onDrop = (e, index) => {
+  const onDrop = (e, targetTodo) => {
     e.preventDefault();
 
     const updateTodos = [...todos];
 
-    const draggedItemIndex = todos.indexOf(draggedItem);
+    // 동일한 하나의 TodoList에서 Drag and Drop을 구현했을 경우
+    const draggedIndex = updateTodos.findIndex((todo) => todo.id === draggedItem.id);
+    const targetIndex = updateTodos.findIndex((todo) => todo.id === targetTodo.id);
 
-    // dragged item과 dragging item의 위치를 바꾸는 로직
-    updateTodos.splice(draggedItemIndex, 1);
-    updateTodos.splice(index, 0, draggedItem);
+    updateTodos.splice(draggedIndex, 1);
+    updateTodos.splice(targetIndex, 0, draggedItem);
 
     //바꾼 todos를 업데이트 하는 로직
-    dispatch({ type: "UPDATE_TODO_BY_DRAG", payload: updateTodos });
+    dispatch({ type: "UPDATE_TODO_BY_DROP", payload: updateTodos });
+
+    setDraggedItem(null);
 
     //드래그 앤 드랍 후 원해 색깔로 초기화 하기
     e.currentTarget.style.backgroundColor = "#eee";
@@ -49,14 +53,14 @@ const TodoList = () => {
 
   return (
     <TodoListStyle>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <TodoItem
           key={todo.id}
           todo={todo}
-          onDragStart={(e) => onDragStart(e, index)}
-          onDragOver={(e) => onDragOver(e, index)}
-          onDragLeave={(e) => onDragLeave(e, index)}
-          onDrop={(e) => onDrop(e, index)}
+          onDragStart={(e) => onDragStart(e, todo)}
+          onDragOver={(e) => onDragOver(e, todo)}
+          onDragLeave={(e) => onDragLeave(e, todo)}
+          onDrop={(e) => onDrop(e, todo)}
         />
       ))}
     </TodoListStyle>

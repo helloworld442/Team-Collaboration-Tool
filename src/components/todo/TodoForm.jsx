@@ -39,7 +39,7 @@ const TodoFormStyle = styled.form`
   }
 `;
 
-const TodoForm = () => {
+const TodoForm = ({ label }) => {
   const [value, setValue] = useState("");
   const { todos } = useTodoState();
   const dispatch = useTodoDispatch();
@@ -50,7 +50,7 @@ const TodoForm = () => {
     e.preventDefault();
 
     // todo form으로 보낼 데이터 양식
-    const payload = { id: todos.length + 1, value, isDone: false };
+    const payload = { id: todos.length + 1, value, isDone: false, label };
 
     // todo form으로 데이터를 보내는 코드
     dispatch({ type: "CREATE_TODO", payload });

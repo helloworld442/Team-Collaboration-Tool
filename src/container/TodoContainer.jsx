@@ -13,7 +13,7 @@ const todoReducer = (state = initialState, action) => {
       return { ...state, todos: state.todos.concat(action.payload) };
     case "GET_TODO_BY_ID":
       return { ...state, todo: state.todos.find((todo) => todo.id === action.payload) };
-    case "UPDATE_TODO_BY_DRAG":
+    case "UPDATE_TODO_BY_DROP":
       return { ...state, todos: action.payload };
     default:
       return state;

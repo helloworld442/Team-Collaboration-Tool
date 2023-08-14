@@ -8,15 +8,15 @@ const Home = () => {
       <TodoContainer>
         <Todo.Template>
           <Todo.Head />
-          <Todo.List />
-          <Todo.Form />
+          <Todo.List label="todo" />
+          <Todo.Form label="todo" />
         </Todo.Template>
       </TodoContainer>
       <TodoContainer>
         <Todo.Template>
           <Todo.Head />
-          <Todo.List />
-          <Todo.Form />
+          <Todo.List label="work" />
+          <Todo.Form label="work" />
         </Todo.Template>
       </TodoContainer>
     </MainLayout>
